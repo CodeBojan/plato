@@ -8,6 +8,7 @@ INCLUDE_DIR := include
 LIB_DIR := lib
 TESTS_DIR := tests
 BIN_DIR := bin
+FILE_SYSTEM := file_system
 
 CC := gcc
 CFLAGS := -g3 -Wall -Wextra -Wconversion -Wdouble-promotion -Wno-unused-parameter -Wno-unused-function -Wno-sign-conversion -fsanitize=undefined,null,address
@@ -31,7 +32,7 @@ $(OBJS): dir
 	@$(CC) $(CFLAGS) -o $(BUILD_DIR)/$@ -c $*.c
 
 dir:
-	@mkdir -p $(BUILD_DIR) $(BIN_DIR)
+	@mkdir -p $(BUILD_DIR) $(BIN_DIR) $(BIN_DIR)/$(FILE_SYSTEM)
 
 clean:
-	@rm -rf $(BUILD_DIR) $(BIN_DIR)
+	@rm -rf $(BUILD_DIR)
